@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css의 활용2</title>
+    <style>
+        ul{
+            overflow: hidden;
+        }
+        li{
+            list-style: none;  /*블릿 삭제*/
+            float: left;
+            padding: 15px;
+        }
+        li:first-child{  /*같은 부모아래에서 형제관계에서 첫번째에 해당하는 요소를 선택*/
+            background-color: beige;
+        }
+        li:last-child{  /*같은 부모아래에서 형제관계에서 마지막번쨰에 해당하는 요소를 선택*/
+            background-color: antiquewhite;
+        }
+        li:nth-child(2n+1){  /*형제관계의 순번째에 위치하는 요소를 선택 (1,2,3...), 2n+1(홀수), 2n(짝수)*/
+            background-color: aqua;
+            color: chocolate;
+        }
+        li:nth-child(2n){
+            background-color: black;
+            color: azure;
+        }
+        li:nth-child(3){
+            border: 3px solid #f00;
+        }
+        li:nth-child(5) a{
+            color: coral;
+        }
+
+        h1:first-of-type{
+            background-color: beige;
+        }
+        h2:last-of-type{
+            color: aqua;
+        }
+        h3:nth-of-type(2){
+            border: 2px solid #f00
+        }
+
+        /*응용*/
+        li:nth-child(5):hover{
+            background-color: blueviolet;
+        }
+        li:nth-child(5):hover a{
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!--
+        구조선택자: 부모의 요소 안에서 특정한 위치의 요소를 선택할 때 사용
+        후손+자손선택자와 함께 많이 사용!
+
+        구조선택자 추가
+        :nth-last-child(n) 부모박스 안에서 형제관계 중에 뒤에서 수열번째에 위치하는 태그를 선택
+    -->
+    <ul>
+        <li>menu-1</li>
+        <li>menu-2</li>
+        <li>menu-3</li>
+        <li>menu-4</li>
+        <li><a href="#">menu-5</a></li>
+        <li>menu-6</li>
+    </ul>
+
+    <!--
+        형태구조선택자: 일반구조선택자와 비슷하지만 태그 형태를 구분
+        :first-of-type 부모박스 안에서 형제관계 중에 첫번째에 위치하는 태그를 선택
+        :last-of-type 부모박스 안에서 형제관계 중에 마지막번째에 위치하는 태그를 선택
+        :nth-of-type 부모박스 안에서 형제관졔 중에 수열번째에 위치하는 태그를 선택
+        :nth-last-of-type 부모박스 안에서 형제관계 중에 뒤에서 수열번쨰에 위치하는 태그를 선택
+    -->
+
+    <div>
+        <h1>header1</h1>
+        <h2>header2</h2>
+        <h3>header3</h3>
+        <h3>header3</h3>
+        <h2>header2</h2>
+        <h1>header1</h1>
+    </div>
+</body>
+</html>
